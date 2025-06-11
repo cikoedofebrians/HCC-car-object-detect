@@ -1,0 +1,6 @@
+build/
+opencv/
+test_cascade/
+dataset/
+haar_cascade_env/
+.DS_Store
