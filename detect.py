@@ -6,7 +6,7 @@ def load_image(image_path: str) -> tuple:
     gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
     return img, gray
 
-def detect_objects(classifier, gray_img, scale=1.1, neighbors=15, min_size=(30, 30)):
+def detect_objects(classifier, gray_img, scale=1.1, neighbors=30, min_size=(30, 30)):
     return classifier.detectMultiScale(
         gray_img,
         scaleFactor=scale,
@@ -20,8 +20,8 @@ def draw_detections(img, detections, color=(255, 0, 0), thickness=2):
     return img
 
 def main():
-    image_path = 'dataset/images/Siamese_247.jpg'
-    model_path = 'cat_detector/cascade.xml'
+    image_path = 'dataset/images/shiba_inu_64.jpg'
+    model_path = 'dog_detector/cascade.xml'
     
     classifier = cv2.CascadeClassifier(model_path)
     img, gray = load_image(image_path)
